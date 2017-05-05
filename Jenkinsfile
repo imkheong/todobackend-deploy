@@ -2,7 +2,7 @@ node {
   checkout scm
 
   stage 'Deploy application release'
-  writeFile file: 'extras.json', text: "{'image_tag':'${IMAGE_TAG}','ecs_tasks':[${TASKS}]}"
+  writeFile file: 'extras.json', text: "{'image_tag':'${IMAGE_TAG}','ecs_tasks':[${TASKS}], 'debug':'true'}"
   sh 'cat extras.json'
   sh 'ansible --version'
 
