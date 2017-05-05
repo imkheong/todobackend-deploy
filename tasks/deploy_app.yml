@@ -74,7 +74,7 @@
     name: "{{ cf_stack.stack_outputs.TodobackendService }}"
     cluster: "{{ cf_stack.stack_outputs.EcsCluster }}"
     task_definition: "{{ todobackend_task_def_arn }}" 
-    desired_count: "{{ instance_count | default(2) }}"
+    desired_count: 2
     deployment_config: 
       minimumHealthyPercent: 50
       maximumPercent: 200
