@@ -2,7 +2,7 @@
 vpc_id: vpc-8bad49f2
 subnet_id: subnet-f4a08691
 ec2_keypair: id_rsa
-instance_count: 3
+instance_count: 2
 db_subnets:
   - subnet-f4a08691
   - subnet-125ab348
