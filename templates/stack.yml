@@ -46,7 +46,7 @@ Resources:
   AutoScalingLaunchConfiguration:
     Type: "AWS::AutoScaling::LaunchConfiguration"
     Properties:
-      ImageId: ami-cf6342ac
+      ImageId: ami-275ffe31
       InstanceType: t2.micro
       KeyName: { "Ref": "KeyPair" }
       IamInstanceProfile: { "Ref": "EC2InstanceProfile" }
@@ -107,7 +107,7 @@ Resources:
       DBInstanceClass: "db.t2.micro"
       DBName: "todobackend"
       Engine: "MySQL"
-      EngineVersion: "5.6"
+      EngineVersion: "5.7"
       MasterUsername: { "Ref": "DbUsername" }
       MasterUserPassword: { "Ref": "DbPassword" }
       VPCSecurityGroups:
@@ -172,7 +172,7 @@ Resources:
     Properties:
       ContainerDefinitions:
         - Name: todobackend
-          Image: jmenga/todobackend
+          Image: imkheong/todobackend
           Memory: 450
           Environment:
             - Name: DJANGO_SETTINGS_MODULE
@@ -194,7 +194,7 @@ Resources:
             - "--master"
             - "--die-on-term"
         - Name: nginx
-          Image: jmenga/todobackend-nginx
+          Image: imkheong/todobackend-nginx
           Memory: 300
           PortMappings:
             - ContainerPort: "8000"
@@ -211,7 +211,7 @@ Resources:
     Properties:
       ContainerDefinitions:
         - Name: todobackend
-          Image: jmenga/todobackend
+          Image: imkheong/todobackend
           Memory: 245
           Environment:
             - Name: DJANGO_SETTINGS_MODULE

@@ -4,7 +4,6 @@
     stack_name: todobackend
     state: present
     template: templates/stack.yml
-    template_format: yaml
     template_parameters:
       VpcId: "{{ vpc_id }}"
       SubnetId: "{{ subnet_id }}"
